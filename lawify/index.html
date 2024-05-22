@@ -65,6 +65,11 @@
         url('fonts/inter-v12-latin-700.woff') format('woff');
       /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
     }
+
+    .video-mask {
+      border-radius: 20px; 
+      overflow: hidden;
+    }
   </style>
 
 
@@ -132,8 +137,11 @@
         <div class="position-absolute w-100 h-50 bg-dark bottom-0 start-0"></div>
         <div class="row d-flex align-items-center position-relative justify-content-center px-0 g-5">
           <div class="col-12 col-lg-6">
-            <img src="book.webp" width="2280" height="1732" alt="abstract image"
-              class="img-fluid position-relative rounded-5 shadow" data-aos="fade-up">
+            <div class="video-mask">
+              <video width="700" height="300" autoplay loop muted>
+                <source src="47802-451812879_medium.mp4" type="video/mp4">
+              </video>
+            </div>
           </div>
           <div class="col-12 col-md-6 col-lg-3">
             <img src="legal.webp" width="1116" height="1578" alt="abstract image"
@@ -166,7 +174,7 @@
             </p>
             <h3 class="border-top border-secondary pt-5 mt-5">Contact Us</h3>
             <p class="text-secondary">Facing any issues? Let us know.<br>
-              <a href="#" class="link-fancy link-fancy-light me-2">Mail now</a>
+              <a href="mailto:lawify.online@gmail.com" class="link-fancy link-fancy-light me-2">Mail now</a>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                 class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
