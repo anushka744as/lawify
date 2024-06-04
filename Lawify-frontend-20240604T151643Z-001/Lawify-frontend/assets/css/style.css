@@ -1230,9 +1230,8 @@ h6 {
 
 * {box-sizing: border-box;}
 
-body.dark {background-color: #292c35;} /* #9b59b6 */
 
-body.dark h1, body.dark .support a {color: #fff;}
+body.dark {background-color: #000000;}
 
 .checkbox {
   opacity: 0;
