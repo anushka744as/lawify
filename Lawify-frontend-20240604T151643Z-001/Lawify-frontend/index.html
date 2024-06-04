@@ -29,7 +29,13 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
- 
+<script>
+  const checkbox = document.getElementById("checkbox")
+  checkbox.addEventListener("change", () => {
+    document.body.classList.toggle("dark")
+  })
+</script>
+
 </head>
 
 <body>
@@ -297,6 +303,16 @@
           <span>Contact</span>
         </a>
       </li><!-- End Contact Page Nav -->
+      <li>
+        <div>
+          <input type="checkbox" class="checkbox" id="checkbox">
+          <label for="checkbox" class="checkbox-label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <span class="ball"></span>
+          </label>
+        </div>
+      </li>
 
   
     </ul>
