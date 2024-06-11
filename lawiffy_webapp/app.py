@@ -2,9 +2,12 @@ from flask import Flask, render_template, request, jsonify
 import openai
 from langdetect import detect, DetectorFactory
 from langdetect.lang_detect_exception import LangDetectException
+from dotenv import load_dotenv
+import os
 
 app = Flask(__name__)
-openai.api_key = '***REMOVED***'
+load_dotenv()
+openai.api_key = os.getenv('OPENAI_API_KEY')
 DetectorFactory.seed = 0
 
 def detect_language(text):
