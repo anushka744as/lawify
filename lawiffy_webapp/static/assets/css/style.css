@@ -1694,3 +1694,157 @@ body.dark .footer .credits {
 .mar {
   margin-left: 10%;
 }
+
+/* Add these styles to your existing style.css */
+
+/* General styles for chat messages */
+/* General styles for chat messages */
+.chat-message {
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  max-width: 80%;
+  word-wrap: break-word;
+}
+
+/* Style for user messages */
+.user-message {
+  background-color: #e0f7fa;
+  text-align: right;
+  margin-left: auto;
+  border: 1px solid #b2ebf2;
+}
+
+/* Style for Lawify responses */
+.lawify-response {
+  background-color: #f1f8e9;
+  text-align: left;
+  margin-right: auto;
+  border: 1px solid #c5e1a5;
+}
+
+/* Strong elements within messages */
+.user-message strong, .lawify-response strong {
+  display: block;
+  margin-bottom: 5px;
+}
+
+/* Container for the chat window */
+.chat-window {
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background: #fff;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+}
+
+/* Dark mode for chat window */
+body.dark .chat-window {
+  background: #333;
+  border-color: #444;
+}
+
+/* Dark mode for user messages */
+body.dark .user-message {
+  background-color: #444;
+  border-color: #666;
+}
+
+/* Dark mode for Lawify responses */
+body.dark .lawify-response {
+  background-color: #555;
+  border-color: #777;
+}
+
+/* Divider between messages */
+.message-divider {
+  margin: 20px 0;
+  border-top: 1px solid #ddd;
+  text-align: center;
+  position: relative;
+}
+
+/* Text within the message divider */
+.message-divider span {
+  position: absolute;
+  top: -10px;
+  background: #fff;
+  padding: 0 10px;
+  font-size: 12px;
+  color: #999;
+}
+
+/* Dark mode for message divider */
+body.dark .message-divider {
+  border-color: #555;
+}
+
+/* Dark mode for text within the message divider */
+body.dark .message-divider span {
+  background: #333;
+  color: #aaa;
+}
+
+/* Animated typing indicator */
+.typing-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-left: 2px;
+  background-color: #333;
+  border-radius: 50%;
+  animation: typing 1.5s infinite;
+}
+
+.typing-indicator:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.typing-indicator:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+/* Dark mode for typing indicator */
+body.dark .typing-indicator {
+  background-color: #f1c40f;
+}
+
+/* Keyframes for typing animation */
+@keyframes typing {
+  0%, 80%, 100% {
+      transform: scale(0);
+  }
+  40% {
+      transform: scale(1);
+  }
+}
+@media (max-width: 768px) {
+  .chat-message {
+    max-width: 100%;
+  }
+
+  .chat-window {
+    padding: 10px;
+  }
+
+  .input-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .input-group input {
+    margin-bottom: 10px;
+    flex: 1;
+    width: 100%;
+  }
+
+  .input-group button {
+    width: 100%;
+  }
+
+  .chat-header,
+  .toggle-dark-mode {
+    font-size: 14px;
+  }
+}
