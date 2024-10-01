@@ -235,6 +235,41 @@
       </div>
     </div>
 
+    <div class="bg-dark position-relative">
+      <div class="container px-vw-5 py-vh-5">
+        <div class="row d-flex align-items-center">
+          <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lykmapipo/themify-icons@0.1.2/css/themify-icons.css">
+          <section data-stellar-background-ratio="0.3" class="counter_feature">
+            <div class="container">
+              <div class="row text-center">
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.1s" data-wow-offset="0">
+                  <div class="single-project">
+                    <span class="ti-user"></span>
+                    <h2 class="counter-num">3652+</h2>
+                    <h4>Happy Clients</h4>
+                  </div>							
+                </div>
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
+                  <div class="single-project">
+                      <span class="ti-pencil-alt"></span>
+                      <h2 class="counter-num" id="usage-count">Loading...</h2>
+                      <h4>Usage Count</h4>
+                  </div>
+                </div><!-- END COL -->
+                <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
+                  <div class="single-project">
+                    <span class="ti-support"></span>
+                    <h2 class="counter-num">1K+</h2>
+                    <h4>Active Users</h4>
+                  </div>					
+                </div><!-- END COL -->
+              </div><!--- END ROW -->
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+
     <div class="container-fluid px-vw-5 position-relative" data-aos="fade">
       <div class="position-absolute w-100 h-50 bg-black top-0 start-0"></div>
       <div class="position-relative py-vh-5 bg-cover bg-center rounded-5"
@@ -704,6 +739,8 @@
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
   <script>
     AOS.init({
       duration: 800, // values from 0 to 3000, with step 50ms
@@ -725,6 +762,40 @@
 
       console.log(scrollpos);
     })
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyDhfnTkzIsfpqaDcyr9T1hVJ5bPGQg49hw",
+      authDomain: "lawify-8c7cf.firebaseapp.com",
+      projectId: "lawify-8c7cf",
+      storageBucket: "lawify-8c7cf.appspot.com",
+      messagingSenderId: "362920250011",
+      appId: "1:362920250011:web:99d9df3524c81e3a0a143e",
+      measurementId: "G-3NW6XP4BDG"
+    };
+
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+
+  // Initialize Firestore
+  const db = firebase.firestore();
+
+  // Retrieve the count from Firestore
+  const usageCountElement = document.getElementById("usage-count");
+  db.collection("Count").doc("Count").get()
+      .then((doc) => {
+          if (doc.exists) {
+              const usageCount = doc.data().Count; // Access the "Count" field
+              usageCountElement.textContent = usageCount;
+          } else {
+              console.error("No such document!");
+              usageCountElement.textContent = "Error";
+          }
+      })
+      .catch((error) => {
+          console.error("Error getting document:", error);
+          usageCountElement.textContent = "Error";
+      });
+
   </script>
 
 </body>
