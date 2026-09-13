@@ -14,6 +14,7 @@
   <meta name="HandheldFriendly" content="true">
   <title>Lawify - Frontpage one</title>
   <link rel="stylesheet" href="css/theme.min.css">
+  <link rel="stylesheet" href="css/lang-switcher.css">
 
   <style>
     /* inter-300 - latin */
@@ -85,18 +86,34 @@
 
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0 list-group list-group-horizontal">
         <li class="nav-item">
-          <a class="nav-link fs-5" href="index.html" aria-label="Homepage">
+          <a class="nav-link fs-5" href="index.html" aria-label="Homepage" data-i18n="nav.home">
             Home
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link fs-5" href="system.html" aria-label="A system message page">
+          <a class="nav-link fs-5" href="system.html" aria-label="A system message page" data-i18n="nav.system">
             System
           </a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link fs-5" href="chat.html" aria-label="Voice chat with Lawify" data-i18n="nav.voicechat">
+            Voice Chat
+          </a>
+        </li>
       </ul>
+      <div class="dropdown me-3">
+        <button class="btn btn-outline-light dropdown-toggle" type="button" id="langSwitcher" data-bs-toggle="dropdown" aria-expanded="false">
+          <span id="langSwitcherLabel">EN</span>
+        </button>
+        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="langSwitcher">
+          <li><button class="dropdown-item" type="button" data-lang="en">English</button></li>
+          <li><button class="dropdown-item" type="button" data-lang="hi">हिन्दी</button></li>
+          <li><button class="dropdown-item" type="button" data-lang="es">Español</button></li>
+          <li><button class="dropdown-item" type="button" data-lang="fr">Français</button></li>
+        </ul>
+      </div>
       <a href="https://www.linkedin.com/in/lawify-6082ba30b/" aria-label="Mail US" class="btn btn-outline-light">
-        <small>Contact Us</small>
+        <small data-i18n="nav.contact">Contact Us</small>
       </a>
     </div>
   </nav>
@@ -108,15 +125,15 @@
       <div class="container py-vh-4 position-relative mt-5 px-vw-5 text-center">
         <div class="row d-flex align-items-center justify-content-center py-vh-5">
           <div class="col-12 col-xl-10">
-            <span class="h5 text-secondary fw-lighter">Our Mission</span>
-            <h1 class="display-huge mt-3 mb-3 lh-1">AI-based legal advisory and informational chatbot</h1>
+            <span class="h5 text-secondary fw-lighter" data-i18n="hero.eyebrow">Our Mission</span>
+            <h1 class="display-huge mt-3 mb-3 lh-1" data-i18n="hero.title">AI-based legal advisory and informational chatbot</h1>
           </div>
           <div class="col-12 col-xl-8">
-            <p class="lead text-secondary">Aiming to make legal help in India accessible for all, regardless of socioeconomic background.
+            <p class="lead text-secondary" data-i18n="hero.subtitle">Aiming to make legal help in India accessible for all, regardless of socioeconomic background.
             </p>
           </div>
           <div class="col-12 text-center">
-            <a href="https://lawify-8d2e7386df0b.herokuapp.com/" class="btn btn-xl btn-light">Start Chatting
+            <a href="chat.html" class="btn btn-xl btn-light"><span data-i18n="hero.cta">Start Chatting</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -139,22 +156,22 @@
                   <div class="single-project">
                     <span class="ti-user"></span>
                     <h1 class="counter-num">12523+</h1>
-                    <h4>Happy Clients</h4>
-                  </div>							
+                    <h4 data-i18n="stats.clients">Happy Clients</h4>
+                  </div>
                 </div>
                 <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.3s" data-wow-offset="0">
                   <div class="single-project">
                       <span class="ti-pencil-alt"></span>
                       <h1 class="counter-num" id="usage-count">Loading...</h1>
-                      <h4>Usage Count</h4>
+                      <h4 data-i18n="stats.usage">Usage Count</h4>
                   </div>
                 </div><!-- END COL -->
                 <div class="col-lg-4 col-sm-6 col-xs-12 no-padding wow fadeInUp" data-wow-duration="1s" data-wow-delay="0.4s" data-wow-offset="0">
                   <div class="single-project">
                     <span class="ti-support"></span>
                     <h1 class="counter-num">1K+</h1>
-                    <h4>Active Users</h4>
-                  </div>					
+                    <h4 data-i18n="stats.active">Active Users</h4>
+                  </div>
                 </div><!-- END COL -->
               </div><!--- END ROW -->
             </div>
@@ -190,24 +207,24 @@
       <div class="container px-vw-5 py-vh-5">
         <div class="row d-flex align-items-center">
           <div class="col-12 col-lg-7 text-lg-end" data-aos="fade-right">
-            <span class="h5 text-secondary fw-lighter">What we do</span>
-            <h2 class="display-3">
+            <span class="h5 text-secondary fw-lighter" data-i18n="whatwedo.eyebrow">What we do</span>
+            <h2 class="display-3" data-i18n="whatwedo.heading">
               Witnessing the lack of legal information accessibility, we were motivated to take action to overcome the disparity in law information accessibility - a problem that truly impacts societies.
             </h2>
           </div>
           <div class="col-12 col-lg-5" data-aos="fade-left">
-            <h3 class="pt-5">Our Chatbot</h3>
-            <p class="text-secondary">Get Lawified with just one click.<br>
-              <a href="#" class="link-fancy link-fancy-light me-2">Take me there</a>
+            <h3 class="pt-5" data-i18n="chatbot.title">Our Chatbot</h3>
+            <p class="text-secondary"><span data-i18n="chatbot.text">Get Lawified with just one click.</span><br>
+              <a href="chat.html" class="link-fancy link-fancy-light me-2" data-i18n="chatbot.cta">Take me there</a>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                 class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
                   d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
               </svg>
             </p>
-            <h3 class="border-top border-secondary pt-5 mt-5">Contact Us</h3>
-            <p class="text-secondary">Facing any issues? Let us know.<br>
-              <a href="mailto:lawify.online@gmail.com" class="link-fancy link-fancy-light me-2">Mail now</a>
+            <h3 class="border-top border-secondary pt-5 mt-5" data-i18n="contactsec.title">Contact Us</h3>
+            <p class="text-secondary"><span data-i18n="contactsec.text">Facing any issues? Let us know.</span><br>
+              <a href="mailto:lawify.online@gmail.com" class="link-fancy link-fancy-light me-2" data-i18n="contactsec.cta">Mail now</a>
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
                 class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -228,8 +245,8 @@
                 <img src="abstract3.webp" width="100%" height="auto" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">Our Audience</h2>
-                  <p class="pb-4 text-secondary">Lawify does not target any specific demographic; in contrast, we at Lawify understand that many individuals stem from different socioeconomic backgrounds and can all benefit from using Lawify. We aim to solve the insufferable stories of exploited laborers, abused spouses, or even betrayed cofounders, all at the click of a button and free of cost.
+                  <h2 class="fw-lighter" data-i18n="audience.title">Our Audience</h2>
+                  <p class="pb-4 text-secondary" data-i18n="audience.text">Lawify does not target any specific demographic; in contrast, we at Lawify understand that many individuals stem from different socioeconomic backgrounds and can all benefit from using Lawify. We aim to solve the insufferable stories of exploited laborers, abused spouses, or even betrayed cofounders, all at the click of a button and free of cost.
                   </p>
                 </div>
               </div>
@@ -240,8 +257,8 @@
                 <img src="abstract2.webp" width="100%" height="auto" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">Bringing Convenience</h2>
-                  <p class="pb-4 text-secondary">Using Lawify is as simple as typing your query into the input box in any worldwide dialect (the chatbot is proficient in most international languages) and hitting enter. The chatbot will then output an answer within seconds, depending on how detailed the question is. Lawify takes variables such as state, religion, age, and gender and can answer follow-up questions. 
+                  <h2 class="fw-lighter" data-i18n="convenience.title">Bringing Convenience</h2>
+                  <p class="pb-4 text-secondary" data-i18n="convenience.text">Using Lawify is as simple as typing your query into the input box in any worldwide dialect (the chatbot is proficient in most international languages) and hitting enter. The chatbot will then output an answer within seconds, depending on how detailed the question is. Lawify takes variables such as state, religion, age, and gender and can answer follow-up questions.
                   </p>
                 </div>
               </div>
@@ -249,16 +266,16 @@
           </div>
           <div class="col-12 col-md-6">
             <div class="p-5 pt-0 mt-5" data-aos="fade">
-              <span class="h5 text-secondary fw-lighter">What you should know</span>
-              <h2 class="display-4">Lawify stems from people's needs.</h2>
+              <span class="h5 text-secondary fw-lighter" data-i18n="whatyoushouldknow.eyebrow">What you should know</span>
+              <h2 class="display-4" data-i18n="whatyoushouldknow.heading">Lawify stems from people's needs.</h2>
             </div>
             <div class="card bg-transparent mb-5 mt-5" data-aos="zoom-in-up">
               <div class="bg-dark shadow rounded-5 p-0">
                 <img src="abstract17.webp" width="100%" height="auto" alt="abstract image"
                   class="img-fluid rounded-5 no-bottom-radius" loading="lazy">
                 <div class="p-5">
-                  <h2 class="fw-lighter">Effective Usage</h2>
-                  <p class="pb-4 text-secondary">It is designed to provide information about the jurisdiction of the user country, whether it is legal advice, exploring case precedents, or researching acts and case laws. 
+                  <h2 class="fw-lighter" data-i18n="effective.title">Effective Usage</h2>
+                  <p class="pb-4 text-secondary" data-i18n="effective.text">It is designed to provide information about the jurisdiction of the user country, whether it is legal advice, exploring case precedents, or researching acts and case laws.
 
                     The more precise and intricate a prompt, the better Lawify can tailor its response to the users’ needs. Asking general questions will yield general advice, which may be counterproductive. Lawify will only outline available options rather than guide users or ask them to choose one. It is not meant to be used inside a courtroom.
                     </p>
@@ -288,25 +305,25 @@
                     class="img-fluid rounded-5" loading="lazy">
                 </div>
                 <div class="col-12 col-lg-10 col-xl-8 text-center my-5">
-                  <p class="lead border-bottom pb-4 border-secondary">“This problem is truly prominent and must be solved. What better method than providing information regarding the law in the most effective and efficient manner, generated straight from an extensively trained AI. This is the best solution.”</p>
-                  <p class="text-secondary text-center">Team Lawify</p>
+                  <p class="lead border-bottom pb-4 border-secondary" data-i18n="quote.text">“This problem is truly prominent and must be solved. What better method than providing information regarding the law in the most effective and efficient manner, generated straight from an extensively trained AI. This is the best solution.”</p>
+                  <p class="text-secondary text-center" data-i18n="quote.author">Team Lawify</p>
                 </div>
               </div>
             </div>
             <div class="col-12 col-lg-6">
-              <span class="h5 text-secondary fw-lighter">Surprisingly the ratio is</span>
+              <span class="h5 text-secondary fw-lighter" data-i18n="ratio.eyebrow">Surprisingly the ratio is</span>
               <h2 class="display-huge fw-bolder" data-aos="zoom-in-left">1 : 3547</h2>
-              <p class="h4 fw-lighter text-secondary">
+              <p class="h4 fw-lighter text-secondary" data-i18n="ratio.text">
                 Globally, there is an average of one lawyer for every 3,547 people.
               </p>
 
               <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">80%
               </h2>
-              <p class="h4 fw-lighter text-secondary">
-                of low-income individuals cannot afford legal representation for civil matters worldwide, underscoring the widespread issue of affordability for legal assistance. 
+              <p class="h4 fw-lighter text-secondary" data-i18n="eighty.text">
+                of low-income individuals cannot afford legal representation for civil matters worldwide, underscoring the widespread issue of affordability for legal assistance.
               </p>
               <h2 class="display-huge fw-bolder border-top border-secondary pt-5 mt-5" data-aos="zoom-in-left">92%+</h2>
-              <p class="h4 fw-lighter text-secondary">
+              <p class="h4 fw-lighter text-secondary" data-i18n="ninetytwo.text">
                 Lawify works on a fabulous accuracy of 92% and more.
               </p>
             </div>
@@ -319,8 +336,8 @@
         <div class="row d-flex align-items-center">
 
           <div class="col-12  bg-dark rounded-5 py-5" data-aos="fade">
-            <span class="h5 text-secondary fw-lighter">How does Lawify work?</span>
-            <h2 class="display-3">Lawify utilizes a highly trained LLM, optimized specifically for legal queries through hyper-tuning. Users select their desired region, triggering a tailored chat session based on that region's legal framework. Lawify then loads pertinent legal documents, including constitutions, codes of conduct, laws, and recent amendments relevant to the selected region.<br><br>
+            <span class="h5 text-secondary fw-lighter" data-i18n="howitworks.eyebrow">How does Lawify work?</span>
+            <h2 class="display-3" data-i18n="howitworks.text">Lawify utilizes a highly trained LLM, optimized specifically for legal queries through hyper-tuning. Users select their desired region, triggering a tailored chat session based on that region's legal framework. Lawify then loads pertinent legal documents, including constitutions, codes of conduct, laws, and recent amendments relevant to the selected region.<br><br>
 
               Our platform integrates a comprehensive database of legal resources, such as statutory laws, judicial precedents, regulatory guidelines, and other legal texts. This ensures the model has a vast repository for accurate and relevant responses. Lawify's strength lies in its region-specific training, involving extensive familiarization with local legal terminologies, procedures, and contextual nuances, guaranteeing accurate and contextually appropriate answers.
               <br><br>
@@ -334,13 +351,13 @@
       <div class="container px-vw-5 py-vh-5">
         <div class="row d-flex align-items-center">
           <div class="col-12 col-lg-5 text-center text-lg-end" data-aos="zoom-in-right">
-            <span class="h5 text-secondary fw-lighter">Funding</span>
-            <h2 class="display-4">Backed by the best institutions across the world</h2>
+            <span class="h5 text-secondary fw-lighter" data-i18n="funding.eyebrow">Funding</span>
+            <h2 class="display-4" data-i18n="funding.heading">Backed by the best institutions across the world</h2>
           </div>
           <div class="col-12 col-lg-7 bg-dark rounded-5 py-vh-3 text-center my-5" data-aos="zoom-in-up">
-            <p class="lead text-secondary">We received mentorship from members in the executive division of the United Nations and secured funding from Harvard MUN Impact Initiative - receiving the third overall prize of 400 USD. We also plan to apply for renowned awards like Diana, Duke of Edinburgh, etc., for more funding. This funding is imperative as the model requires GPT4o tokens, which cost approximately 20 USD for 1 million tokens. We also have a potential partnership with the World Foundation for Peace and Sustainability to promote our platform.
+            <p class="lead text-secondary" data-i18n="funding.text">We received mentorship from members in the executive division of the United Nations and secured funding from Harvard MUN Impact Initiative - receiving the third overall prize of 400 USD. We also plan to apply for renowned awards like Diana, Duke of Edinburgh, etc., for more funding. This funding is imperative as the model requires GPT4o tokens, which cost approximately 20 USD for 1 million tokens. We also have a potential partnership with the World Foundation for Peace and Sustainability to promote our platform.
             </p>
-            <a href="#" class="btn btn-xl btn-light">Use Now
+            <a href="#" class="btn btn-xl btn-light"><span data-i18n="funding.cta">Use Now</span>
               <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                 <path fill-rule="evenodd"
@@ -393,13 +410,13 @@
                 </svg>
 
               </div>
-              <p class="text-secondary lead">An esteemed mathematician, proficient in logistics, and a basketball player; looking to apply mathematics and logic in any scenario possible.</p>
+              <p class="text-secondary lead" data-i18n="member.arhaan.bio">An esteemed mathematician, proficient in logistics, and a basketball player; looking to apply mathematics and logic in any scenario possible.</p>
               <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
                 <img src="arhaan.jpeg" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                 <div>
                   <span class="h6 fw-5">Arhaan Goyal</span><br>
-                  <small class="text-secondary">Co-Founder</small>
+                  <small class="text-secondary" data-i18n="role.cofounder">Co-Founder</small>
                 </div>
               </div>
             </div>
@@ -440,13 +457,13 @@
                 </svg>
 
               </div>
-              <p class="text-secondary lead">An international debater representing India multiple times, and a recognised expert when it comes to computer science, technology, or management.</p>
+              <p class="text-secondary lead" data-i18n="member.pranay.bio">An international debater representing India multiple times, and a recognised expert when it comes to computer science, technology, or management.</p>
               <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
                 <img src="sadani.jpg" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                 <div>
                   <span class="h6 fw-5">Pranay Sadani</span><br>
-                  <small class="text-secondary">Co-Founder</small>
+                  <small class="text-secondary" data-i18n="role.cofounder">Co-Founder</small>
                 </div>
               </div>
             </div>
@@ -454,8 +471,8 @@
           </div>
           <div class="col-12 col-lg-6">
             <div class="p-5 pt-0" data-aos="fade">
-              <span class="h5 text-secondary fw-lighter">Who We Are?</span>
-              <h2 class="display-4">Presenting Team Lawify</h2>
+              <span class="h5 text-secondary fw-lighter" data-i18n="team.whoweare">Who We Are?</span>
+              <h2 class="display-4" data-i18n="team.heading1">Presenting Team Lawify</h2>
             </div>
             <div class="rounded-5 bg-black p-5 shadow mt-5" data-aos="zoom-in-left">
               <div class="fs-1">
@@ -495,13 +512,13 @@
 
 
               </div>
-              <p class="lead">An intellectual in international relations and an avid athlete playing football and volleyball. He is striving for a future in the United Nations, related to Global Affairs.</p>
+              <p class="lead" data-i18n="member.divyansh.bio">An intellectual in international relations and an avid athlete playing football and volleyball. He is striving for a future in the United Nations, related to Global Affairs.</p>
               <div class="d-flex justify-content-start align-items-center border-top pt-3">
                 <img src="bindal.jpg" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                 <div>
                   <span class="h6 fw-5">Divyansh Bindal</span><br>
-                  <small>Co-Founder</small>
+                  <small data-i18n="role.cofounder">Co-Founder</small>
                 </div>
               </div>
             </div>
@@ -556,14 +573,14 @@
 
                 
               </div>
-              <p class="text-secondary lead">Highly skilled in business ventures, whether its advertising, marketing, or logistics, he has immense knowledge in all fields related to making an organisation run.
+              <p class="text-secondary lead" data-i18n="member.vatsal.bio">Highly skilled in business ventures, whether its advertising, marketing, or logistics, he has immense knowledge in all fields related to making an organisation run.
               </p>
               <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
                 <img src="vatsal.jpg" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                 <div>
                   <span class="h6 fw-5">Vatsal Goyal</span><br>
-                  <small class="text-secondary">Head of Outreach</small>
+                  <small class="text-secondary" data-i18n="role.outreach">Head of Outreach</small>
                 </div>
               </div>
             </div>
@@ -597,14 +614,14 @@
                 </svg>
 
               </div>
-              <p class="text-secondary lead">A technology and CS expert with significant knowledge in Artificial Intelligence and website creation. He has mastered the skills of coding.
+              <p class="text-secondary lead" data-i18n="member.sai.bio">A technology and CS expert with significant knowledge in Artificial Intelligence and website creation. He has mastered the skills of coding.
               </p>
               <div class="d-flex justify-content-start align-items-center border-top border-secondary pt-3">
                 <img src="sai.jpg" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                   <div>
                     <span class="h6 fw-5">Sai Divit Vemulapalli</span><br>
-                    <small class="text-secondary">Tech Head</small>
+                    <small class="text-secondary" data-i18n="role.techhead">Tech Head</small>
                   </div>
               </div>
             </div>
@@ -612,8 +629,8 @@
           </div>
           <div class="col-12 col-lg-6">
             <div class="p-5 pt-0" data-aos="fade">
-              <span class="h5 text-secondary fw-lighter">Who We Are?</span>
-              <h2 class="display-4">Our Core Team</h2>
+              <span class="h5 text-secondary fw-lighter" data-i18n="team.whoweare">Who We Are?</span>
+              <h2 class="display-4" data-i18n="team.heading2">Our Core Team</h2>
             </div>
             <div class="rounded-5 bg-black p-5 shadow mt-5" data-aos="zoom-in-left">
               <div class="fs-1">
@@ -652,13 +669,13 @@
                 </svg>
 
               </div>
-              <p class="lead">Advertising, marketing, or social media presence, he is truly a professional when it comes to creativity, publicity, or overall promotion.</p>
+              <p class="lead" data-i18n="member.nimay.bio">Advertising, marketing, or social media presence, he is truly a professional when it comes to creativity, publicity, or overall promotion.</p>
               <div class="d-flex justify-content-start align-items-center border-top pt-3">
                 <img src="nimay.jpg" width="96" height="96" class="rounded-circle me-3" alt="a nice person"
                   data-aos="fade" loading="lazy">
                 <div>
                   <span class="h6 fw-5">Nimay Seth</span><br>
-                  <small>Head of Marketing</small>
+                  <small data-i18n="role.marketing">Head of Marketing</small>
                 </div>
               </div>
             </div>
@@ -678,71 +695,72 @@
           </a>
         </div>
         <div class="col border-end border-dark">
-          <span class="h6">Company</span>
+          <span class="h6" data-i18n="footer.company">Company</span>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">About us</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.aboutus">About us</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Legal</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.legal">Legal</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Career</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.career">Career</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Contact</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.contactitem">Contact</a>
             </li>
           </ul>
         </div>
         <div class="col border-end border-dark">
-          <span class="h6">Services</span>
+          <span class="h6" data-i18n="footer.services">Services</span>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Pricing</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.pricing">Pricing</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Products</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.products">Products</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Customers</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.customers">Customers</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Portfolio</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.portfolio">Portfolio</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Success Stories</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.success">Success Stories</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">More</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.more">More</a>
             </li>
           </ul>
         </div>
         <div class="col">
-          <span class="h6">Support</span>
+          <span class="h6" data-i18n="footer.support">Support</span>
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">About us</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.aboutus">About us</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Legal</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.legal">Legal</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Career</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.career">Career</a>
             </li>
             <li class="nav-item">
-              <a href="#" class="link-fancy link-fancy-light">Contact</a>
+              <a href="#" class="link-fancy link-fancy-light" data-i18n="footer.contactitem">Contact</a>
             </li>
           </ul>
         </div>
       </div>
     </div>
     <div class="container text-center small py-vh-2 border-top border-dark">
-      All Rights Reserved | Copyright 2023 <a href="lawify.online" class="link-fancy link-fancy-light" target="_blank">Lawify</a>
+      <span data-i18n="footer.copyright">All Rights Reserved | Copyright 2023</span> <a href="lawify.online" class="link-fancy link-fancy-light" target="_blank">Lawify</a>
     </div>
   </footer>
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/aos.js"></script>
+  <script src="js/i18n.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-app-compat.js"></script>
   <script src="https://www.gstatic.com/firebasejs/9.17.1/firebase-firestore-compat.js"></script>
   <script>
