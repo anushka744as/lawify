@@ -317,12 +317,57 @@
 
       // --- Text-to-speech ---
       var synth = window.speechSynthesis;
+      var voices = [];
+
+      function loadVoices() {
+        voices = synth ? synth.getVoices() : [];
+      }
+      if (synth) {
+        loadVoices();
+        synth.addEventListener("voiceschanged", loadVoices);
+      }
+
+      // The default voice picked by the browser when none is set is
+      // usually the lowest-quality compact one. Prefer higher-quality
+      // "Natural"/"Neural"/"Enhanced"/"Premium"/online voices, and among
+      // those prefer a recognizably female voice (the API has no
+      // standard gender field, so this matches common female voice
+      // names shipped by macOS/Chrome/Edge across languages).
+      var FEMALE_NAME_RE = new RegExp([
+        "samantha", "victoria", "karen", "moira", "tessa", "fiona", "susan",
+        "allison", "ava", "serena", "zira", "female", "aria", "jenny",
+        "michelle", "emma", "salli", "joanna", "kendra", "kimberly",
+        "monica", "paulina", "amelie", "audrey", "celine", "marie",
+        "lekha", "veena", "sangeeta", "heera", "kalpana", "swara", "rishi"
+      ].join("|"), "i");
+
+      function pickBestVoice(lang) {
+        if (!voices.length) return null;
+        var langPrefix = lang.split("-")[0];
+        var candidates = voices.filter(function (v) {
+          return v.lang === lang || v.lang.split("-")[0] === langPrefix;
+        });
+        if (!candidates.length) candidates = voices;
+
+        var qualityRe = /natural|neural|enhanced|premium|online|google/i;
+        var female = candidates.filter(function (v) { return FEMALE_NAME_RE.test(v.name); });
+        var pool = female.length ? female : candidates;
+
+        var best = pool.find(function (v) { return qualityRe.test(v.name); });
+        return best || pool[0];
+      }
 
       speakBtn.addEventListener("click", function () {
         if (!synth || !speakBox.value.trim()) return;
         synth.cancel();
+        var lang = speechLang();
         var utterance = new SpeechSynthesisUtterance(speakBox.value.trim());
-        utterance.lang = speechLang();
+        utterance.lang = lang;
+        utterance.rate = 0.9;
+        utterance.pitch = 1.05;
+        utterance.volume = 0.9;
+        var voice = pickBestVoice(lang);
+        if (voice) utterance.voice = voice;
         synth.speak(utterance);
       });
 
