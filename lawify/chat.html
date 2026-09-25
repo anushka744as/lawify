@@ -82,9 +82,17 @@
     /* theme.min.css's reset gives font-family:inherit to button/input but
        not textarea, so it was falling back to the browser's monospace UA
        default instead of the site's font. */
-    .voice-panel textarea {
+    .voice-panel textarea,
+    .voice-panel textarea:focus {
       resize: vertical;
       font-family: inherit;
+      color: #fff;
+      background-color: #343a40;
+      border-color: #495057;
+    }
+
+    .voice-panel textarea::placeholder {
+      color: #8a8a8e;
     }
   </style>
 
