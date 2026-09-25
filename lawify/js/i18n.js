@@ -36,6 +36,8 @@
       "contactsec.cta": "Mail now",
       "audience.title": "Our Audience",
       "audience.text": "Lawify does not target any specific demographic; in contrast, we at Lawify understand that many individuals stem from different socioeconomic backgrounds and can all benefit from using Lawify. We aim to solve the insufferable stories of exploited laborers, abused spouses, or even betrayed cofounders, all at the click of a button and free of cost.",
+      "farmers.title": "For Farmers",
+      "farmers.text": "Lawify also stands with farmers and rural communities, helping them make sense of land ownership papers, tenancy and inheritance records, and government pension and welfare schemes in plain language — so understanding the paperwork no longer requires a lawyer or a trip to the city.",
       "convenience.title": "Bringing Convenience",
       "convenience.text": "Using Lawify is as simple as typing your query into the input box in any worldwide dialect (the chatbot is proficient in most international languages) and hitting enter. The chatbot will then output an answer within seconds, depending on how detailed the question is. Lawify takes variables such as state, religion, age, and gender and can answer follow-up questions.",
       "whatyoushouldknow.eyebrow": "What you should know",
@@ -118,6 +120,8 @@
       "contactsec.cta": "अभी मेल करें",
       "audience.title": "हमारे उपयोगकर्ता",
       "audience.text": "Lawify किसी विशेष वर्ग को लक्षित नहीं करता; हम समझते हैं कि विभिन्न सामाजिक-आर्थिक पृष्ठभूमि से आने वाले लोग भी Lawify से लाभ उठा सकते हैं। हमारा उद्देश्य शोषित मजदूरों, प्रताड़ित जीवनसाथियों, या धोखा खाए सह-संस्थापकों की असहनीय कहानियों को एक बटन दबाकर और बिल्कुल मुफ़्त हल करना है।",
+      "farmers.title": "किसानों के लिए",
+      "farmers.text": "Lawify किसानों और ग्रामीण समुदायों के साथ भी खड़ा है, उन्हें भूमि स्वामित्व के दस्तावेज़ों, पट्टे और उत्तराधिकार के रिकॉर्ड, तथा सरकारी पेंशन और कल्याण योजनाओं को सरल भाषा में समझने में मदद करता है - जिससे कागज़ी कार्रवाई समझने के लिए अब वकील या शहर जाने की ज़रूरत नहीं पड़ती।",
       "convenience.title": "सुविधा प्रदान करना",
       "convenience.text": "Lawify का उपयोग करना उतना ही आसान है जितना अपनी भाषा में सवाल टाइप करके एंटर दबाना (चैटबॉट अधिकांश अंतरराष्ट्रीय भाषाओं में पारंगत है)। चैटबॉट कुछ ही सेकंड में उत्तर देगा, जो सवाल की गहराई पर निर्भर करता है। Lawify राज्य, धर्म, उम्र और लिंग जैसे कारकों को ध्यान में रखता है और फॉलो-अप प्रश्नों का भी उत्तर दे सकता है।",
       "whatyoushouldknow.eyebrow": "आपको क्या जानना चाहिए",
@@ -200,6 +204,8 @@
       "contactsec.cta": "Enviar correo ahora",
       "audience.title": "Nuestra Audiencia",
       "audience.text": "Lawify no se dirige a ningún grupo demográfico específico; por el contrario, en Lawify entendemos que muchas personas provienen de diferentes contextos socioeconómicos y todas pueden beneficiarse del uso de Lawify. Nuestro objetivo es resolver las insufribles historias de trabajadores explotados, cónyuges maltratados o incluso cofundadores traicionados, todo con solo hacer clic en un botón y de forma gratuita.",
+      "farmers.title": "Para Agricultores",
+      "farmers.text": "Lawify también apoya a los agricultores y las comunidades rurales, ayudándoles a entender los documentos de propiedad de la tierra, los registros de arrendamiento y herencia, y los planes de pensión y bienestar del gobierno en un lenguaje sencillo, para que entender el papeleo ya no requiera un abogado ni un viaje a la ciudad.",
       "convenience.title": "Aportando Conveniencia",
       "convenience.text": "Usar Lawify es tan simple como escribir tu consulta en el cuadro de entrada en cualquier idioma del mundo (el chatbot domina la mayoría de los idiomas internacionales) y presionar enter. El chatbot generará una respuesta en segundos, dependiendo del nivel de detalle de la pregunta. Lawify considera variables como estado, religión, edad y género, y puede responder preguntas de seguimiento.",
       "whatyoushouldknow.eyebrow": "Lo que deberías saber",
@@ -282,6 +288,8 @@
       "contactsec.cta": "Envoyer un e-mail",
       "audience.title": "Notre Public",
       "audience.text": "Lawify ne cible aucun groupe démographique spécifique ; au contraire, chez Lawify, nous comprenons que de nombreuses personnes proviennent de milieux socio-économiques différents et peuvent toutes bénéficier de Lawify. Nous visons à résoudre les histoires insupportables de travailleurs exploités, de conjoints maltraités, ou même de cofondateurs trahis, en un simple clic et gratuitement.",
+      "farmers.title": "Pour les Agriculteurs",
+      "farmers.text": "Lawify soutient également les agriculteurs et les communautés rurales, en les aidant à comprendre les documents de propriété foncière, les registres de bail et de succession, ainsi que les régimes de pension et d'aide sociale du gouvernement dans un langage simple, afin que comprendre les démarches administratives ne nécessite plus un avocat ni un déplacement en ville.",
       "convenience.title": "Apporter de la Commodité",
       "convenience.text": "Utiliser Lawify est aussi simple que de taper votre question dans le champ de saisie dans n'importe quelle langue du monde (le chatbot maîtrise la plupart des langues internationales) et d'appuyer sur entrée. Le chatbot fournira ensuite une réponse en quelques secondes, selon le niveau de détail de la question. Lawify prend en compte des variables telles que l'État, la religion, l'âge et le genre, et peut répondre à des questions de suivi.",
       "whatyoushouldknow.eyebrow": "Ce que vous devez savoir",
@@ -332,7 +340,7 @@
 
   var SUPPORTED = Object.keys(translations);
   var STORAGE_KEY = "lawify_lang";
-  var LABELS = { en: "EN", hi: "हि", es: "ES", fr: "FR" };
+  var LABELS = { en: "English", hi: "हिन्दी", es: "Español", fr: "Français" };
 
   function detectLanguage() {
     try {

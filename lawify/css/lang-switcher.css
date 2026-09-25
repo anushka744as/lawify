@@ -1,17 +1,87 @@
+/* theme.min.css ships an incomplete spacing-utility set, so any element
+   using one of these classes renders with no padding/margin at all. */
+.p-4 {
+  padding: 1.5rem !important;
+}
+
+.mt-2 {
+  margin-top: 0.5rem !important;
+}
+
+.mt-4,
+.my-4 {
+  margin-top: 1.5rem !important;
+}
+
+.my-4 {
+  margin-bottom: 1.5rem !important;
+}
+
+@media (min-width: 992px) {
+  .p-lg-5 {
+    padding: 3rem !important;
+  }
+}
+
+.d-none {
+  display: none !important;
+}
+
+.gap-2 {
+  gap: 0.5rem !important;
+}
+
+.btn-sm {
+  --bs-btn-padding-y: 0.25rem;
+  --bs-btn-padding-x: 0.5rem;
+  --bs-btn-font-size: 0.875rem;
+}
+
+.display-3 {
+  font-size: calc(1.525rem + 3.3vw);
+  font-weight: 300;
+  line-height: 1.2;
+}
+
+@media (min-width: 1200px) {
+  .display-3 {
+    font-size: 4rem;
+  }
+}
+
 /* Minimal dropdown styling — theme.min.css ships no .dropdown-menu rules,
    so Bootstrap's dropdown JS toggles a bare, unstyled <ul> without this. */
 
+.dropdown {
+  position: relative;
+}
+
 .dropdown-menu {
   display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  left: auto;
   list-style: none;
   margin: 0.5rem 0 0;
   padding: 0.375rem;
-  min-width: 9rem;
+  min-width: 10rem;
   background-color: #111;
   border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 12px;
   box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
   z-index: 1050;
+}
+
+#langSwitcher {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+}
+
+#langSwitcher svg {
+  flex-shrink: 0;
 }
 
 .dropdown-menu.show {
