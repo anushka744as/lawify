@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python3 -m http.server 8000)",
+      "Bash(python3 -m http.server 8001)",
+      "Bash(curl -s http://localhost:8001/ -o /dev/null -w \"%{http_code}\\\\n\")",
+      "Bash(curl -s -D - http://localhost:8001/css/lang-switcher.css -o /dev/null)",
+      "Bash(curl -s http://localhost:8001/css/lang-switcher.css)",
+      "Bash(npm i *)",
+      "Bash(node test.js)",
+      "Bash(awk 'NR<=7945 && /@media/{line=NR; rule=$0} END{print line\": \"rule}' css/theme.css)",
+      "Bash(node test2.js)",
+      "Bash(node test3.js)",
+      "Bash(node test4.js)",
+      "Bash(node -e ' *)",
+      "Bash(node test5.js)",
+      "Bash(node -e \"JSON.parse\\(require\\('fs'\\).readFileSync\\(0\\)\\)\")",
+      "Bash(node --check js/i18n.js)",
+      "Bash(node test6.js)",
+      "Bash(node test7.js)",
+      "Bash(node test8.js)",
+      "Bash(node test9.js)"
+    ]
+  }
+}
