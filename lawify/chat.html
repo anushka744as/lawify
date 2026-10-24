@@ -48,6 +48,28 @@
     .chat-msg.model { align-self: flex-start; background: #2b2f33; }
     .chat-msg.error { background: #842029; }
 
+    /* .form-control in theme.min.css forces dark text on a white background,
+       including on focus, which made typed text invisible here. */
+    #chatForm .form-control,
+    #chatForm .form-control:focus,
+    #chatForm .form-control:-webkit-autofill {
+      color: #fff !important;
+      -webkit-text-fill-color: #fff;
+      caret-color: #fff;
+      color-scheme: dark;
+      background-color: #343a40 !important;
+      border-color: #495057;
+    }
+
+    #chatForm .form-control:focus {
+      border-color: #0d6efd;
+    }
+
+    #chatForm .form-control::placeholder {
+      color: #8a8a8e;
+      -webkit-text-fill-color: #8a8a8e;
+    }
+
     .voice-panel {
       display: flex;
       flex-direction: column;

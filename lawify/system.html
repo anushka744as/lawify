@@ -14,6 +14,24 @@
   <meta name="HandheldFriendly" content="true">
   <title>Register a new account</title>
   <link rel="stylesheet" href="css/theme.min.css">
+  <style>
+    /* theme.min.css gives .form-control dark text on a white background, so
+       typing was invisible against the dark bg-gray-800 fields. */
+    .form-control,
+    .form-control:focus,
+    .form-control:-webkit-autofill {
+      color: #fff !important;
+      -webkit-text-fill-color: #fff;
+      caret-color: #fff;
+      color-scheme: dark;
+      background-color: #343a40 !important;
+      border-color: #495057;
+    }
+
+    .form-control:focus {
+      border-color: #8b8bf2;
+    }
+  </style>
 
 
   </head>
