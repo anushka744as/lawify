@@ -21,14 +21,32 @@
       flex-direction: column;
     }
 
-    .chat-frame {
-      width: 100%;
+    .chat-log {
       flex: 1 1 auto;
       min-height: 420px;
+      max-height: 520px;
+      overflow-y: auto;
+      padding: 1rem;
       border: 1px solid rgba(255, 255, 255, 0.08);
       border-radius: 16px;
-      background: #fff;
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      gap: .75rem;
     }
+
+    .chat-msg {
+      max-width: 85%;
+      padding: .6rem .9rem;
+      border-radius: 14px;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      color: #fff;
+    }
+
+    .chat-msg.user { align-self: flex-end; background: #0d6efd; }
+    .chat-msg.model { align-self: flex-start; background: #2b2f33; }
+    .chat-msg.error { background: #842029; }
 
     .voice-panel {
       display: flex;
@@ -158,7 +176,13 @@
           <div class="col-12 col-lg-7">
             <div class="chat-card bg-dark rounded-5 p-4 p-lg-5 shadow h-100">
               <h3 class="mb-3" data-i18n="voicechat.chatlabel">Chat with Lawify</h3>
-              <iframe class="chat-frame" title="Lawify chatbot" src="https://lawify-8d2e7386df0b.herokuapp.com/" loading="lazy"></iframe>
+              <div id="chatLog" class="chat-log" aria-live="polite">
+                <div class="chat-msg model">Hi, I'm Lawify. Ask me a legal question in any language.</div>
+              </div>
+              <form id="chatForm" class="d-flex gap-2 mt-3">
+                <input id="chatInput" type="text" class="form-control form-control-lg bg-gray-800 border-dark text-white" placeholder="Type your legal question..." autocomplete="off" required>
+                <button id="chatSend" type="submit" class="btn btn-light">Send</button>
+              </form>
             </div>
           </div>
 
@@ -215,6 +239,57 @@
 
   <script src="js/bootstrap.bundle.min.js"></script>
   <script src="js/i18n.js"></script>
+  <script>
+    (function () {
+      var chatLog = document.getElementById("chatLog");
+      var chatForm = document.getElementById("chatForm");
+      var chatInput = document.getElementById("chatInput");
+      var chatSend = document.getElementById("chatSend");
+      var history = [];
+
+      function addMsg(role, text, extra) {
+        var el = document.createElement("div");
+        el.className = "chat-msg " + role + (extra ? " " + extra : "");
+        el.textContent = text;
+        chatLog.appendChild(el);
+        chatLog.scrollTop = chatLog.scrollHeight;
+        return el;
+      }
+
+      chatForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+        var text = chatInput.value.trim();
+        if (!text) return;
+        chatInput.value = "";
+        addMsg("user", text);
+        history.push({ role: "user", text: text });
+        chatSend.disabled = true;
+        var pending = addMsg("model", "...");
+        fetch("/api/chat", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ messages: history })
+        })
+          .then(function (r) { return r.json().then(function (d) { return { ok: r.ok, d: d }; }); })
+          .then(function (res) {
+            if (!res.ok) throw new Error(res.d.error || "Request failed");
+            pending.textContent = res.d.reply;
+            history.push({ role: "model", text: res.d.reply });
+            document.getElementById("speakBox").value = res.d.reply;
+          })
+          .catch(function (err) {
+            pending.textContent = "Sorry, something went wrong: " + err.message;
+            pending.classList.add("error");
+            history.pop();
+          })
+          .then(function () {
+            chatSend.disabled = false;
+            chatLog.scrollTop = chatLog.scrollHeight;
+            chatInput.focus();
+          });
+      });
+    })();
+  </script>
   <script>
     (function () {
       var micBtn = document.getElementById("micBtn");
