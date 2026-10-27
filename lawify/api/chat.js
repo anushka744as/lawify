@@ -1,4 +1,4 @@
-const MODEL = "gemini-3.8-flash";
+const MODEL = "gemini-3-flash-preview";
 
 const SYSTEM_PROMPT =
   "You are Lawify, an AI legal information assistant focused on Indian law. " +

@@ -115,3 +115,9 @@
   background-color: rgba(255, 255, 255, 0.18);
   font-weight: 600;
 }
+
+/* Long language list: keep the menu inside the viewport and scrollable. */
+.dropdown-menu {
+  max-height: 70vh;
+  overflow-y: auto;
+}
